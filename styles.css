@@ -1,0 +1,307 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+#wrapper {
+    width: 100%;
+} 
+
+nav {
+    position: sticky;
+    display: flex;
+    width: 100%;
+    height: 6vh;
+    top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background: grey;
+    border-radius: 50%;
+    height: 4vh;
+    width: 6vw;
+    min-width: 70px;
+}
+
+#linkBorderWrapper {
+    position: absolute;
+    display: inherit;
+    width: 100%;
+    height: 6vh;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    z-index: 0;
+}
+
+.linkBorder {
+    border: 3px solid black;
+    border-radius: 50%;
+    height: 4vh;
+    width: 6vw;
+    min-width: 70px;
+    margin-top: 1vh;
+}
+#linkBorder4 {
+    margin-left: calc(5% - 4.5px);
+}
+
+
+.barColor {
+    background: #AAA9AD;
+}
+
+nav ul {
+    display: inherit;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 4vh;
+    width: 100%;
+    justify-content: center;
+}
+
+.homeIcon {
+    font-size: 2vh;
+}
+
+.contactIcons {
+    font-size: 5vh;
+    color: blue;
+}
+
+@media only screen and (min-width: 1300px) {
+    nav ul {
+        margin-right: 4%;
+    }
+}
+
+nav ul li {
+    margin-left: 5%;
+    width: fit-content;
+    z-index: 5;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    height: 5vh;
+    text-align: right;
+}
+
+footer p {
+    margin: 0 5vw 0 0;
+    line-height: 5vh;
+}
+
+
+
+
+/* Main section styles */
+
+
+
+.padding {
+    height: 5vh;
+    width: 100%;
+}
+
+.smallPadding {
+    height: 3vh;
+    width: 100%;
+}
+
+.section {
+    width: 100%;
+    min-height: 89vh;
+    text-align: center;
+    padding-top: 6vh;
+}
+
+h1, p {
+    margin: 0;
+}
+
+#home {
+    background: url("src/vector-green-matrix-background.jpg");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+#picBox {
+    margin: auto;
+    width: 60vw;
+}
+
+textPath {
+    font-size: 50px;
+}
+
+#myImg {
+    border-radius: 50%;
+    margin-top: 5%;
+    width: 40%;
+    height: 60%;
+}
+
+#circle {
+    border-radius: 50%;
+    background: yellow;
+    box-shadow: 0 0 3vw 5vw yellow;
+    width: 40%;
+    margin: auto;
+}
+
+.line {
+    height: 0px;
+    width: 90%;
+    border: 3px solid black;
+    border-radius: 12px;
+}
+
+.divider {
+    height: 3px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background: black;
+}
+
+#about {
+    background: url("https://images.freeimages.com/images/large-previews/2f9/circuit-board-texture-2-1184404.jpg");
+    background-size: cover;
+    font-size: 150%;
+}
+
+#skillBox {
+    background: #d966ff;
+    box-shadow: 0 0 3vw 5vw #d966ff;
+    outline: 5px solid red;
+    outline-offset: 3vw;
+    width: 30vw;
+    height: 20vh;
+    margin: 20vh auto;
+}
+
+#skills {
+    list-style: none;
+}
+
+#portfolio {
+    background: #d966ff;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+}
+
+.projectThumbnail {
+    height: 10vh;
+    width: 20vh;
+    margin: 20px;
+}
+
+#contact {
+    background: green;
+}
+
+#foot {
+    margin-top: 60vh;
+}
+
+
+
+/* Desktop size */
+
+
+@media screen and (min-width: 1100px) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    #wrapper {
+        position: fixed;
+    }
+    .barColor {
+        position: initial;
+    }
+    #mainSection {
+        height: 89vh;
+        width: 95vw;
+        border-left: 2.5vw solid #AAA9AD;
+        border-right: 2.5vw solid #AAA9AD;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        top: 0;
+        left: 0;
+        perspective: 50vw;
+        transform-style: preserve-3d;
+    }
+    #rotatedWrapper {
+        position: relative;
+        perspective: 50vw;
+        transform-style: preserve-3d;
+        display: flex;
+    }
+
+    #wrap {
+        display: flex;
+    }
+
+    .section {
+        padding: 0;
+        height: 89vh;
+        width: 90vw;
+    }  
+    .fold {
+        overflow: hidden;
+        width: 90vw;
+        height: 89vh;
+    }
+    .foldTop {
+        position: absolute;
+        transform-origin: right center;
+        top: 0;
+        bottom: 0;
+        right: 97.39%;
+        transform: rotateY(-20deg);
+        background: green;
+    }
+    .foldBottom {
+        position: absolute;
+        transform-origin: left center;
+        top: 0;
+        bottom: 0;
+        left: 97.39%;
+        transform: rotateY(20deg);
+        background: green;
+    }
+    .foldCenter {
+        margin: auto;
+    }
+    .foldAlign {
+        width: 100%;
+        height: 100%;
+    }
+    .foldBottom .foldAlign {
+        transform: translateX(-100%);
+    }
+    .foldTop .foldAlign {
+        transform: translateX(100%);
+    }
+}

@@ -212,7 +212,7 @@ ReactDOM.render(<MainSection />, document.getElementById('mainSection'));
 // let linkCheck = false;
 // let centerContent = document.getElementById("centerContent");
 // let centerFold = document.getElementById("centerFold");console.log(foldsContent[0])console.log(currentScroll)
-let mainSectionWidth = document.getElementById("mainSection").clientWidth * 0.949;
+let mainSectionWidth = document.getElementById("mainSection").clientWidth * 0.9473;
 // window.addEventListener('resize', () => {
 //     let oldSize = desktopSize;
 //     desktopSize = window.matchMedia("(min-width: 1100px)").matches ? true : false;
@@ -227,7 +227,7 @@ function sideScrollStarter() {
     );
     let currentScroll = targetScroll;
     let tick = () => {
-        mainSectionWidth = document.getElementById("mainSection").clientWidth * 0.949;
+        mainSectionWidth = document.getElementById("mainSection").clientWidth * 0.9473;
         let overflowHeight = mainSectionWidth * 3//centerContent.clientHeight - centerFold.clientHeight;
 
         document.body.style.height = overflowHeight + window.innerHeight + "px";

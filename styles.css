@@ -244,6 +244,7 @@ textPath {
         width: 95vw;
         border-left: 2.5vw solid #AAA9AD;
         border-right: 2.5vw solid #AAA9AD;
+        overflow: hidden;
         justify-content: center;
         align-items: center;
         position: relative;

@@ -179,6 +179,7 @@ textPath {
     background: url("https://images.freeimages.com/images/large-previews/2f9/circuit-board-texture-2-1184404.jpg");
     background-size: cover;
     font-size: 150%;
+    padding-bottom: 10vh;
 }
 
 #skillBox {
@@ -188,7 +189,7 @@ textPath {
     outline-offset: 3vw;
     width: 30vw;
     height: 20vh;
-    margin: 20vh auto;
+    margin: 20vh auto 0 auto;
 }
 
 #skills {

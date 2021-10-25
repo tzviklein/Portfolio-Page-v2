@@ -28,29 +28,30 @@ class MainSection extends React.Component {
         return (
             <div>
                 {screenSize === 'desktop' ? (
-                <div id="rotatedWrapper">
-                    <div className="fold foldTop">
-                        <div className="foldAlign">
-                            <div className="foldContent">
-                                <Contents/>
+                    <div id="rotatedWrapper">
+                        <div className="fold foldTop">
+                            <div className="foldAlign">
+                                <div className="foldContent">
+                                    <Contents/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="fold foldCenter" id="centerFold">
+                            <div className="foldAlign">
+                                <div className="foldContent" id="centerContent">
+                                    <Contents/>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="fold foldBottom">
+                            <div className="foldAlign">
+                                <div className="foldContent">
+                                    <Contents/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="fold foldCenter" id="centerFold">
-                        <div className="foldAlign">
-                            <div className="foldContent" id="centerContent">
-                                <Contents/>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="fold foldBottom">
-                        <div className="foldAlign">
-                            <div className="foldContent">
-                                <Contents/>
-                            </div>
-                        </div>
-                    </div>
-                </div>) : null}
+                ) : null}
                 {screenSize === 'mobile' ? <Contents /> : null}
             </div>
         )
@@ -110,9 +111,10 @@ class Contents extends React.Component {
                         <h1>WEB DEVELOPER</h1> */}
                     </div>
                 </div>
-                <hr class="divider"/>
+                {/* <hr class="divider"/> */}
                 <div className="counterRotated">
                     <div id="about" className="section">
+                    <h1>about</h1>
                     <div className="padding"></div>
                         <div id="circle">
                             <p>Hi! My name is Tzvi Klein.<br />
@@ -133,9 +135,10 @@ class Contents extends React.Component {
                     </div>
                 </div>
                 
-                <hr class="divider"/>
+                {/* <hr class="divider"/> */}
                 <div className="counterRotated">
                     <div id="portfolio" className="section">
+                    <h1>projects</h1>
                     <div className="padding"></div>
                         <p>Here is some projects I have made:</p>
                         <div className="smallPadding"></div>
@@ -188,6 +191,7 @@ class Contents extends React.Component {
                 <hr class="divider"/>
                 <div className="counterRotated">
                     <div id="contact" className="section">
+                        <h1>contact</h1>
                         <div className="padding"></div>
                         <p>You can email me at:<br /><br />
                         <a href="mailto:tkof1988@gmail.com?subject=mail%20from%20my%20page" class="myEmail">tkof1988@gmail.com</a><br /><br />
@@ -228,13 +232,13 @@ function sideScrollStarter() {
     let currentScroll = targetScroll;
     let tick = () => {
         mainSectionWidth = document.getElementById("mainSection").clientWidth * 0.9473;
-        let overflowHeight = mainSectionWidth * 3//centerContent.clientHeight - centerFold.clientHeight;
+        let overflowHeight = mainSectionWidth * 3;
 
         document.body.style.height = overflowHeight + window.innerHeight + "px";
         targetScroll = -(
             document.documentElement.scrollTop || document.body.scrollTop
         )
-
+        console.log()
         currentScroll += (targetScroll - currentScroll) * 0.1;
         foldsContent.forEach(content => {
             content.style.transform = `translateX(${currentScroll}px)`;
@@ -277,5 +281,55 @@ function contactLink() {
         document.documentElement.scrollTop = mainSectionWidth * 3
     } else {
         document.getElementById("contact").scrollIntoView(true)
+    }
+}
+
+// "active button" highlight 
+
+let prevActiveButton = "homeButton";
+
+document.addEventListener("scroll", activeButtonChanger);
+
+const navButtonArray = document.getElementsByClassName("navButton")
+
+function activeButtonChanger() {
+    if(activeButtonChecker() != prevActiveButton) {
+        document.getElementById(prevActiveButton).classList.remove("activeButton");
+        document.getElementById(activeButtonChecker()).classList.add("activeButton");
+        prevActiveButton = activeButtonChecker();
+    }
+}
+
+function activeButtonChecker() {
+    const scrollPosition = document.documentElement.scrollTop;
+    let activeButton;
+    switch(true) {
+        case scrollPosition > mainSectionWidth * 3 - 10:
+            activeButton = "contactButton";
+            break;
+        case scrollPosition > mainSectionWidth * 2 - 10:
+            activeButton = "projectsButton";
+            break;
+        case scrollPosition > mainSectionWidth - 10:
+            activeButton = "aboutButton";
+            break;
+        case scrollPosition >= 0:
+            activeButton = "homeButton";
+            break;                             
+    }
+    return activeButton;
+}
+
+// right/left arrow button (desktop version)
+
+function scrollLft() {
+    if(document.documentElement.scrollTop != 0) {
+        document.documentElement.scrollTop -= mainSectionWidth;
+    }
+}
+
+function scrollRght() {
+    if(document.documentElement.scrollTop != mainSectionWidth * 3) {
+        document.documentElement.scrollTop += mainSectionWidth;
     }
 }

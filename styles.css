@@ -28,6 +28,21 @@ button {
     min-width: 70px;
 }
 
+.activeButton {
+    background-image: radial-gradient(red 0%, grey 80%);
+}
+
+#homeListItem {
+    margin-top: 2px;
+}
+
+.screenReaderLabel {
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
 #linkBorderWrapper {
     position: absolute;
     display: inherit;
@@ -239,7 +254,32 @@ textPath {
     }
     .barColor {
         position: initial;
+        }
+    #arrowLeft {
+        height: 0;
+        width: 5px;
+        border-top: 200px solid transparent;
+        border-right: 2vw solid red;
+        border-bottom: 200px solid transparent;
+        position: fixed;
+        left: 0;
+        top: 50%;
+        margin-top: -200px;
+        z-index: 1;
     }
+    #arrowRight {
+        height: 0;
+        width: 5px;
+        border-top: 200px solid transparent;
+        border-left: 2vw solid red;
+        border-bottom: 200px solid transparent;
+        position: fixed;
+        right: 0;
+        top: 50%;
+        margin-top: -200px;
+        z-index: 1;
+    }
+
     #mainSection {
         height: 89vh;
         width: 95vw;

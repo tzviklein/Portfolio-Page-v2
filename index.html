@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Tzvi Klein</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,10 +15,13 @@
         <div id="wrapper">
             <nav class="barColor">
                 <ul>
-                    <li><button onclick="homeLink()"><i class="fa fa-home homeIcon"></i></button></li>
-                    <li><button onclick="aboutLink()">about</button></li>
-                    <li><button onclick="projectsLink()">projects</button></li>
-                    <li><button onclick="contactLink()">contact</button></li>
+                    <li id="homeListItem"><button id="homeButton" class="activeButton" onclick="homeLink()">
+                        <i class="fa fa-home homeIcon"></i>
+                        <span class="screenReaderLabel">Home</span>
+                    </button></li>
+                    <li><button id="aboutButton" onclick="aboutLink()">about</button></li>
+                    <li><button id="projectsButton" onclick="projectsLink()">projects</button></li>
+                    <li><button id="contactButton" onclick="contactLink()">contact</button></li>
                     <!-- <div id="linkBorderWrapper">
                         <div class="linkBorder" id="linkBorder1"></div>
                         <div class="linkBorder" id="linkBorder2"></div></div>
@@ -27,6 +30,8 @@
                     </div> -->
                 </ul>
             </nav>
+            <div id="arrowLeft" onclick="scrollLft()"></div>
+            <div id="arrowRight" onclick="scrollRght()"></div>
             <div id="mainSection"></div>
             <footer class="barColor"><p>Created by Tzvi Klein.</p></footer>
         </div>

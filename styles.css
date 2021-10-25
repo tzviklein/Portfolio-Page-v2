@@ -247,7 +247,7 @@ textPath {
         width: 0;
         height: 0;
     }
-    body {
+    html {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }

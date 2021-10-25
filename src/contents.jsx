@@ -298,6 +298,18 @@ function activeButtonChanger() {
         document.getElementById(activeButtonChecker()).classList.add("activeButton");
         prevActiveButton = activeButtonChecker();
     }
+
+    if(activeButtonChecker() === "contactButton") {
+        document.getElementById("arrowRight").style.borderLeft = "2vw solid grey";
+    } else {
+        document.getElementById("arrowRight").style.borderLeft = "2vw solid red";
+    }
+
+    if(document.documentElement.scrollTop === 0) {
+        document.getElementById("arrowLeft").style.borderRight = "2vw solid grey";
+    } else {
+        document.getElementById("arrowLeft").style.borderRight = "2vw solid red";
+    }
 }
 
 function activeButtonChecker() {

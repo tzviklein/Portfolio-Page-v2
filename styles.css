@@ -254,12 +254,13 @@ textPath {
     }
     .barColor {
         position: initial;
-        }
+    }
+    
     #arrowLeft {
         height: 0;
         width: 5px;
         border-top: 200px solid transparent;
-        border-right: 2vw solid red;
+        border-right: 2vw solid grey;
         border-bottom: 200px solid transparent;
         position: fixed;
         left: 0;
@@ -279,7 +280,7 @@ textPath {
         margin-top: -200px;
         z-index: 1;
     }
-
+    
     #mainSection {
         height: 89vh;
         width: 95vw;

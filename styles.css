@@ -230,10 +230,13 @@ textPath {
 
 #contact {
     background: green;
+    position: relative;
 }
 
 #foot {
-    margin-top: 55vh;
+    /* margin-top: 55vh; */
+    position: absolute;
+    bottom: 0;
 }
 
 
